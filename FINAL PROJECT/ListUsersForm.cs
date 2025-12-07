@@ -12,6 +12,8 @@ namespace FINAL_PROJECT
         public ListUsersForm()
         {
             InitializeComponent();
+            Theme.ApplyToForm(this);
+            StartPosition = FormStartPosition.CenterParent;
             LoadUsers();
         }
 
@@ -91,6 +93,11 @@ namespace FINAL_PROJECT
             {
                 f.ShowDialog();
             }
+        }
+
+        private void ListUsersForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

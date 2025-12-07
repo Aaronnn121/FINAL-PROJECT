@@ -1,99 +1,100 @@
-﻿namespace FINAL_PROJECT
+﻿// MainMenuForm.Designer.cs
+namespace FINAL_PROJECT
 {
     partial class MainMenuForm
     {
         private System.ComponentModel.IContainer components = null;
+        private Label lblWelcome;
         private Button btnAddUser;
         private Button btnListUsers;
+        private Button btnTransfer;
+        private Button btnLogout;
         private Button btnExit;
-        private Label lblTitle;
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing && components != null) components.Dispose();
+            if (disposing && (components != null)) components.Dispose();
             base.Dispose(disposing);
         }
 
         private void InitializeComponent()
         {
+            lblWelcome = new Label();
             btnAddUser = new Button();
             btnListUsers = new Button();
+            btnTransfer = new Button();
+            btnLogout = new Button();
             btnExit = new Button();
-            lblTitle = new Label();
             SuspendLayout();
-
-            // Form
-            this.ClientSize = new System.Drawing.Size(380, 330);
-            this.BackColor = Color.FromArgb(0, 0, 0);
-            this.Font = new Font("Segoe UI", 11F);
-
-            // lblTitle
-            lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            lblTitle.ForeColor = Color.FromArgb(0, 255, 117);
-            lblTitle.Location = new Point(60, 41);
-            lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(259, 37);
-            lblTitle.Text = "Bank System Menu";
-
+            // 
+            // lblWelcome
+            // 
+            lblWelcome.AutoSize = true;
+            lblWelcome.Location = new Point(24, 20);
+            lblWelcome.Name = "lblWelcome";
+            lblWelcome.Size = new Size(94, 15);
+            lblWelcome.TabIndex = 0;
+            lblWelcome.Text = "Welcome, [User]";
+            // 
             // btnAddUser
-            btnAddUser.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnAddUser.Location = new Point(60, 120);
+            // 
+            btnAddUser.Location = new Point(24, 70);
             btnAddUser.Name = "btnAddUser";
-            btnAddUser.Size = new Size(259, 40);
+            btnAddUser.Size = new Size(220, 42);
             btnAddUser.TabIndex = 1;
             btnAddUser.Text = "Add New User";
-            StylePrimaryButton(btnAddUser);
             btnAddUser.Click += btnAddUser_Click;
-
+            // 
             // btnListUsers
-            btnListUsers.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnListUsers.Location = new Point(60, 180);
+            // 
+            btnListUsers.Location = new Point(24, 130);
             btnListUsers.Name = "btnListUsers";
-            btnListUsers.Size = new Size(259, 40);
+            btnListUsers.Size = new Size(220, 42);
             btnListUsers.TabIndex = 2;
             btnListUsers.Text = "List Users";
-            StylePrimaryButton(btnListUsers);
             btnListUsers.Click += btnListUsers_Click;
-
+            // 
+            // btnTransfer
+            // 
+            btnTransfer.Location = new Point(24, 190);
+            btnTransfer.Name = "btnTransfer";
+            btnTransfer.Size = new Size(220, 42);
+            btnTransfer.TabIndex = 3;
+            btnTransfer.Text = "Transfer Money";
+            btnTransfer.Click += btnTransfer_Click;
+            // 
+            // btnLogout
+            // 
+            btnLogout.Location = new Point(24, 250);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(100, 36);
+            btnLogout.TabIndex = 4;
+            btnLogout.Text = "Logout";
+            btnLogout.Click += btnLogout_Click;
+            // 
             // btnExit
-            btnExit.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnExit.Location = new Point(60, 240);
+            // 
+            btnExit.Location = new Point(144, 250);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(259, 40);
-            btnExit.TabIndex = 3;
+            btnExit.Size = new Size(100, 36);
+            btnExit.TabIndex = 5;
             btnExit.Text = "Exit";
-            StyleSecondaryButton(btnExit);
             btnExit.Click += btnExit_Click;
-
-            // Add controls
-            this.Controls.Add(lblTitle);
-            this.Controls.Add(btnAddUser);
-            this.Controls.Add(btnListUsers);
-            this.Controls.Add(btnExit);
-            this.Name = "MainMenuForm";
-            this.Text = "Main Menu";
+            // 
+            // MainMenuForm
+            // 
+            ClientSize = new Size(600, 320);
+            Controls.Add(lblWelcome);
+            Controls.Add(btnAddUser);
+            Controls.Add(btnListUsers);
+            Controls.Add(btnTransfer);
+            Controls.Add(btnLogout);
+            Controls.Add(btnExit);
+            Name = "MainMenuForm";
+            Text = "Main Menu";
+            Load += MainMenuForm_Load;
             ResumeLayout(false);
             PerformLayout();
-        }
-
-        // Helper to style primary (green) buttons
-        private void StylePrimaryButton(Button b)
-        {
-            b.BackColor = Color.FromArgb(0, 255, 117);
-            b.ForeColor = Color.Black;
-            b.FlatStyle = FlatStyle.Flat;
-            b.FlatAppearance.BorderSize = 0;
-        }
-
-        // Helper to style secondary (dark) buttons with green border
-        private void StyleSecondaryButton(Button b)
-        {
-            b.BackColor = Color.FromArgb(17, 17, 17);
-            b.ForeColor = Color.FromArgb(0, 255, 117);
-            b.FlatStyle = FlatStyle.Flat;
-            b.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 117);
-            b.FlatAppearance.BorderSize = 2;
         }
     }
 }

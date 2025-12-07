@@ -12,26 +12,53 @@ namespace FINAL_PROJECT
 {
     public partial class MainMenuForm : Form
     {
-        public MainMenuForm()
+        private User _currentUser;
+
+        public MainMenuForm(User currentUser)
         {
+            _currentUser = currentUser;
             InitializeComponent();
+            Theme.ApplyToForm(this);
+            lblWelcome.Text = $"Welcome, {_currentUser.Fullname}";
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
-            AddUserForm form = new AddUserForm();
-            form.ShowDialog();
+            using (var f = new AddUserForm()) f.ShowDialog();
+
         }
 
         private void btnListUsers_Click(object sender, EventArgs e)
         {
-            ListUsersForm form = new ListUsersForm();
-            form.ShowDialog();
+            using (var f = new ListUsersForm()) f.ShowDialog();
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+
+        }
+
+        private void btnTransfer_Click(object sender, EventArgs e)
+        {
+            using (var f = new TransferForm(_currentUser.Id))
+            {
+                f.ShowDialog();
+            }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            using (var f = new TransferForm(_currentUser.Id))
+            {
+                f.ShowDialog();
+            }
+        }
+
+        private void MainMenuForm_Load(object sender, EventArgs e)
+        {
 
         }
     }

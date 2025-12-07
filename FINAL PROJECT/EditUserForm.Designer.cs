@@ -114,6 +114,7 @@
             Font = new Font("Segoe UI", 10F);
             Name = "EditUserForm";
             Text = "Edit User";
+            Load += EditUserForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -18,9 +18,10 @@ namespace FINAL_PROJECT
         public AddUserForm()
         {
             InitializeComponent();
+            Theme.ApplyToForm(this);
         }
 
-      
+
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -36,7 +37,6 @@ namespace FINAL_PROJECT
                 return;
             }
 
-            // check username uniqueness
             var existing = userRepo.GetByUsername(username);
             if (existing != null)
             {
@@ -73,6 +73,10 @@ namespace FINAL_PROJECT
             this.Close();
 
         }
-    
+
+        private void AddUserForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

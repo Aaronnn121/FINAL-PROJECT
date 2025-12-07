@@ -29,61 +29,81 @@
             btnSave = new Button();
             btnCancel = new Button();
             SuspendLayout();
-
-            // Form
-            this.ClientSize = new Size(420, 200);
-            this.BackColor = Color.FromArgb(0, 0, 0);
-            this.Font = new Font("Segoe UI", 10F);
-
+            // 
             // lblFullname
+            // 
             lblFullname.AutoSize = true;
-            lblFullname.Location = new Point(25, 20);
             lblFullname.ForeColor = Color.White;
+            lblFullname.Location = new Point(25, 20);
+            lblFullname.Name = "lblFullname";
+            lblFullname.Size = new Size(73, 19);
+            lblFullname.TabIndex = 0;
             lblFullname.Text = "Full Name:";
-
-            // txtFullname
-            txtFullname.Location = new Point(120, 18);
-            txtFullname.Size = new Size(270, 23);
-            StyleTextBox(txtFullname);
-
+            // 
             // lblUsername
+            // 
             lblUsername.AutoSize = true;
-            lblUsername.Location = new Point(25, 55);
             lblUsername.ForeColor = Color.White;
+            lblUsername.Location = new Point(25, 55);
+            lblUsername.Name = "lblUsername";
+            lblUsername.Size = new Size(74, 19);
+            lblUsername.TabIndex = 2;
             lblUsername.Text = "Username:";
-
-            // txtUsername
-            txtUsername.Location = new Point(120, 52);
-            txtUsername.Size = new Size(270, 23);
-            StyleTextBox(txtUsername);
-
+            // 
             // lblPassword
+            // 
             lblPassword.AutoSize = true;
-            lblPassword.Location = new Point(25, 90);
             lblPassword.ForeColor = Color.White;
+            lblPassword.Location = new Point(25, 90);
+            lblPassword.Name = "lblPassword";
+            lblPassword.Size = new Size(70, 19);
+            lblPassword.TabIndex = 4;
             lblPassword.Text = "Password:";
-
+            // 
+            // txtFullname
+            // 
+            txtFullname.Location = new Point(120, 18);
+            txtFullname.Name = "txtFullname";
+            txtFullname.Size = new Size(270, 25);
+            txtFullname.TabIndex = 1;
+            // 
+            // txtUsername
+            // 
+            txtUsername.Location = new Point(120, 52);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(270, 25);
+            txtUsername.TabIndex = 3;
+            // 
             // txtPassword
+            // 
             txtPassword.Location = new Point(120, 87);
-            txtPassword.Size = new Size(270, 23);
+            txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
-            StyleTextBox(txtPassword);
-
+            txtPassword.Size = new Size(270, 25);
+            txtPassword.TabIndex = 5;
+            // 
             // btnSave
+            // 
             btnSave.Location = new Point(120, 130);
+            btnSave.Name = "btnSave";
             btnSave.Size = new Size(100, 36);
+            btnSave.TabIndex = 6;
             btnSave.Text = "Save";
-            StylePrimaryButton(btnSave);
             btnSave.Click += btnSave_Click;
-
+            // 
             // btnCancel
+            // 
             btnCancel.Location = new Point(250, 130);
+            btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(100, 36);
+            btnCancel.TabIndex = 7;
             btnCancel.Text = "Cancel";
-            StyleSecondaryButton(btnCancel);
             btnCancel.Click += btnCancel_Click;
-
-            // Add controls
+            // 
+            // AddUserForm
+            // 
+            BackColor = Color.FromArgb(0, 0, 0);
+            ClientSize = new Size(420, 200);
             Controls.Add(lblFullname);
             Controls.Add(txtFullname);
             Controls.Add(lblUsername);
@@ -92,8 +112,10 @@
             Controls.Add(txtPassword);
             Controls.Add(btnSave);
             Controls.Add(btnCancel);
+            Font = new Font("Segoe UI", 10F);
             Name = "AddUserForm";
             Text = "Add User";
+            Load += AddUserForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

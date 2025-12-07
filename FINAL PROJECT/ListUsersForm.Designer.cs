@@ -26,13 +26,9 @@
             btnDelete = new Button();
             ((System.ComponentModel.ISupportInitialize)dgViewUsers).BeginInit();
             SuspendLayout();
-
-            // Form
-            this.ClientSize = new Size(900, 500);
-            this.BackColor = Color.FromArgb(0, 0, 0);
-            this.Font = new Font("Segoe UI", 10F);
-
+            // 
             // dgViewUsers
+            // 
             dgViewUsers.AllowUserToAddRows = false;
             dgViewUsers.AllowUserToDeleteRows = false;
             dgViewUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -44,67 +40,72 @@
             dgViewUsers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgViewUsers.Size = new Size(840, 360);
             dgViewUsers.TabIndex = 2;
-            StyleDataGridView(dgViewUsers);
-
+            // 
             // btnViewAccount
+            // 
             btnViewAccount.Location = new Point(25, 400);
             btnViewAccount.Name = "btnViewAccount";
             btnViewAccount.Size = new Size(150, 35);
             btnViewAccount.TabIndex = 1;
             btnViewAccount.Text = "View Bank Account";
-            StylePrimaryButton(btnViewAccount);
             btnViewAccount.Click += btnViewAccount_Click;
-
-            // btnViewTransactions
-            btnViewTransactions.Location = new Point(190, 400);
-            btnViewTransactions.Name = "btnViewTransactions";
-            btnViewTransactions.Size = new Size(150, 35);
-            btnViewTransactions.TabIndex = 4;
-            btnViewTransactions.Text = "View Transactions";
-            StylePrimaryButton(btnViewTransactions);
-            btnViewTransactions.Click += btnViewTransactions_Click;
-
-            // btnEdit
-            btnEdit.Location = new Point(360, 400);
-            btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(90, 35);
-            btnEdit.TabIndex = 5;
-            btnEdit.Text = "Edit";
-            StyleSecondaryButton(btnEdit);
-            btnEdit.Click += btnEdit_Click;
-
-            // btnDelete
-            btnDelete.Location = new Point(460, 400);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(90, 35);
-            btnDelete.TabIndex = 6;
-            btnDelete.Text = "Delete";
-            // Danger style: red border + dark bg
-            btnDelete.BackColor = Color.FromArgb(17, 17, 17);
-            btnDelete.ForeColor = Color.FromArgb(0, 255, 117);
-            btnDelete.FlatStyle = FlatStyle.Flat;
-            btnDelete.FlatAppearance.BorderColor = Color.FromArgb(255, 68, 68);
-            btnDelete.FlatAppearance.BorderSize = 2;
-            btnDelete.Click += btnDelete_Click;
-
+            // 
             // btnRefresh
+            // 
             btnRefresh.Location = new Point(750, 400);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(110, 35);
             btnRefresh.TabIndex = 0;
             btnRefresh.Text = "Refresh";
-            StylePrimaryButton(btnRefresh);
             btnRefresh.Click += btnRefresh_Click;
-
-            // Add controls
+            // 
+            // btnViewTransactions
+            // 
+            btnViewTransactions.Location = new Point(190, 400);
+            btnViewTransactions.Name = "btnViewTransactions";
+            btnViewTransactions.Size = new Size(150, 35);
+            btnViewTransactions.TabIndex = 4;
+            btnViewTransactions.Text = "View Transactions";
+            btnViewTransactions.Click += btnViewTransactions_Click;
+            // 
+            // btnEdit
+            // 
+            btnEdit.Location = new Point(360, 400);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(90, 35);
+            btnEdit.TabIndex = 5;
+            btnEdit.Text = "Edit";
+            btnEdit.Click += btnEdit_Click;
+            // 
+            // btnDelete
+            // 
+            btnDelete.BackColor = Color.FromArgb(17, 17, 17);
+            btnDelete.FlatAppearance.BorderColor = Color.FromArgb(255, 68, 68);
+            btnDelete.FlatAppearance.BorderSize = 2;
+            btnDelete.FlatStyle = FlatStyle.Flat;
+            btnDelete.ForeColor = Color.FromArgb(0, 255, 117);
+            btnDelete.Location = new Point(460, 400);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(90, 35);
+            btnDelete.TabIndex = 6;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // ListUsersForm
+            // 
+            BackColor = Color.FromArgb(0, 0, 0);
+            ClientSize = new Size(900, 500);
             Controls.Add(btnDelete);
             Controls.Add(btnEdit);
             Controls.Add(btnViewTransactions);
             Controls.Add(btnRefresh);
             Controls.Add(btnViewAccount);
             Controls.Add(dgViewUsers);
+            Font = new Font("Segoe UI", 10F);
             Name = "ListUsersForm";
             Text = "List of Users";
+            Load += ListUsersForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgViewUsers).EndInit();
             ResumeLayout(false);
         }

@@ -14,6 +14,8 @@ namespace FINAL_PROJECT
             User = user;
             txtFullname.Text = User.Fullname;
             txtUsername.Text = User.Username;
+            Theme.ApplyToForm(this);
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -58,6 +60,11 @@ namespace FINAL_PROJECT
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void EditUserForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

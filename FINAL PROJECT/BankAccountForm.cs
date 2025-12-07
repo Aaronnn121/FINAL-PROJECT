@@ -24,8 +24,9 @@ namespace FINAL_PROJECT
 
         public BankAccountForm(int userId)
         {
-            _userId = userId;
             InitializeComponent();
+            Theme.ApplyToForm(this);
+            _userId = userId;
             LoadAccount();
         }
 
@@ -67,6 +68,10 @@ namespace FINAL_PROJECT
 
             lblBalanceValue.Text = "₱" + account.Balance.ToString("N2");
             txtAmount.Clear();
+
+            // print receipt
+            ReceiptPrinter.PrintDepositReceipt(userRepo.Get(_userId), account, amount);
+
             MessageBox.Show("Deposit successful!", "Deposit", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -99,8 +104,13 @@ namespace FINAL_PROJECT
 
             lblBalanceValue.Text = "₱" + account.Balance.ToString("N2");
             txtAmount.Clear();
+
+            ReceiptPrinter.PrintWithdrawReceipt(userRepo.Get(_userId), account, amount);
+
             MessageBox.Show("Withdrawal successful!", "Withdraw", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+
 
         private void btnViewTransactions_Click(object sender, EventArgs e)
         {
@@ -114,6 +124,11 @@ namespace FINAL_PROJECT
             {
                 f.ShowDialog();
             }
+        }
+
+        private void BankAccountForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
