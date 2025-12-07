@@ -3,7 +3,6 @@
     partial class BankAccountForm
     {
         private System.ComponentModel.IContainer components = null;
-
         private Label lblFullname;
         private Label lblFullnameValue;
         private Label lblBalance;
@@ -21,83 +20,112 @@
 
         private void InitializeComponent()
         {
-            this.lblFullname = new Label();
-            this.lblFullnameValue = new Label();
-            this.lblBalance = new Label();
-            this.lblBalanceValue = new Label();
-            this.txtAmount = new TextBox();
-            this.btnDeposit = new Button();
-            this.btnWithdraw = new Button();
-            this.btnViewTransactions = new Button();
+            lblFullname = new Label();
+            lblFullnameValue = new Label();
+            lblBalance = new Label();
+            lblBalanceValue = new Label();
+            txtAmount = new TextBox();
+            btnDeposit = new Button();
+            btnWithdraw = new Button();
+            btnViewTransactions = new Button();
+            SuspendLayout();
 
-            this.SuspendLayout();
-            // 
+            // Form
+            this.ClientSize = new Size(480, 200);
+            this.BackColor = Color.FromArgb(0, 0, 0);
+            this.Font = new Font("Segoe UI", 10F);
+
             // lblFullname
-            // 
-            this.lblFullname.AutoSize = true;
-            this.lblFullname.Location = new System.Drawing.Point(25, 20);
-            this.lblFullname.Text = "Full Name:";
-            // 
+            lblFullname.AutoSize = true;
+            lblFullname.Location = new Point(25, 20);
+            lblFullname.ForeColor = Color.White;
+            lblFullname.Text = "Full Name:";
+
             // lblFullnameValue
-            // 
-            this.lblFullnameValue.AutoSize = true;
-            this.lblFullnameValue.Location = new System.Drawing.Point(120, 20);
-            this.lblFullnameValue.Text = "---";
-            // 
+            lblFullnameValue.AutoSize = true;
+            lblFullnameValue.Location = new Point(140, 20);
+            lblFullnameValue.ForeColor = Color.FromArgb(0, 255, 117);
+            lblFullnameValue.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            lblFullnameValue.Text = "---";
+
             // lblBalance
-            // 
-            this.lblBalance.AutoSize = true;
-            this.lblBalance.Location = new System.Drawing.Point(25, 50);
-            this.lblBalance.Text = "Balance:";
-            // 
+            lblBalance.AutoSize = true;
+            lblBalance.Location = new Point(25, 50);
+            lblBalance.ForeColor = Color.White;
+            lblBalance.Text = "Balance:";
+
             // lblBalanceValue
-            // 
-            this.lblBalanceValue.AutoSize = true;
-            this.lblBalanceValue.Location = new System.Drawing.Point(120, 50);
-            this.lblBalanceValue.Text = "₱0.00";
-            // 
+            lblBalanceValue.AutoSize = true;
+            lblBalanceValue.Location = new Point(140, 50);
+            lblBalanceValue.ForeColor = Color.FromArgb(0, 255, 117);
+            lblBalanceValue.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblBalanceValue.Text = "₱0.00";
+
             // txtAmount
-            // 
-            this.txtAmount.Location = new System.Drawing.Point(25, 90);
-            this.txtAmount.Size = new System.Drawing.Size(180, 23);
-            this.txtAmount.PlaceholderText = "Enter amount";
-            // 
+            txtAmount.Location = new Point(25, 90);
+            txtAmount.Size = new Size(220, 25);
+            txtAmount.PlaceholderText = "Enter amount";
+            txtAmount.BackColor = Color.FromArgb(17, 17, 17);
+            txtAmount.ForeColor = Color.White;
+            txtAmount.BorderStyle = BorderStyle.FixedSingle;
+
             // btnDeposit
-            // 
-            this.btnDeposit.Location = new System.Drawing.Point(220, 90);
-            this.btnDeposit.Size = new System.Drawing.Size(80, 23);
-            this.btnDeposit.Text = "Deposit";
-            this.btnDeposit.Click += new System.EventHandler(this.btnDeposit_Click);
-            // 
+            btnDeposit.Location = new Point(260, 88);
+            btnDeposit.Size = new Size(90, 30);
+            btnDeposit.Text = "Deposit";
+            StylePrimaryButton(btnDeposit);
+            btnDeposit.Click += btnDeposit_Click;
+
             // btnWithdraw
-            // 
-            this.btnWithdraw.Location = new System.Drawing.Point(310, 90);
-            this.btnWithdraw.Size = new System.Drawing.Size(80, 23);
-            this.btnWithdraw.Text = "Withdraw";
-            this.btnWithdraw.Click += new System.EventHandler(this.btnWithdraw_Click);
-            // 
+            btnWithdraw.Location = new Point(360, 88);
+            btnWithdraw.Size = new Size(90, 30);
+            btnWithdraw.Text = "Withdraw";
+            btnWithdraw.BackColor = Color.FromArgb(0, 107, 56); // dark green
+            btnWithdraw.ForeColor = Color.White;
+            btnWithdraw.FlatStyle = FlatStyle.Flat;
+            btnWithdraw.FlatAppearance.BorderSize = 0;
+            btnWithdraw.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+            btnWithdraw.Click += btnWithdraw_Click;
+
             // btnViewTransactions
-            // 
-            this.btnViewTransactions.Location = new System.Drawing.Point(25, 125);
-            this.btnViewTransactions.Size = new System.Drawing.Size(150, 28);
-            this.btnViewTransactions.Text = "View Transactions";
-            this.btnViewTransactions.Click += new System.EventHandler(this.btnViewTransactions_Click);
-            // 
-            // BankAccountForm
-            // 
-            this.ClientSize = new System.Drawing.Size(420, 170);
-            this.Controls.Add(this.lblFullname);
-            this.Controls.Add(this.lblFullnameValue);
-            this.Controls.Add(this.lblBalance);
-            this.Controls.Add(this.lblBalanceValue);
-            this.Controls.Add(this.txtAmount);
-            this.Controls.Add(this.btnDeposit);
-            this.Controls.Add(this.btnWithdraw);
-            this.Controls.Add(this.btnViewTransactions);
-            this.Name = "BankAccountForm";
-            this.Text = "Bank Account";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            btnViewTransactions.Location = new Point(25, 130);
+            btnViewTransactions.Size = new Size(180, 36);
+            btnViewTransactions.Text = "View Transactions";
+            StyleSecondaryButton(btnViewTransactions);
+            btnViewTransactions.Click += btnViewTransactions_Click;
+
+            // Add controls
+            Controls.Add(lblFullname);
+            Controls.Add(lblFullnameValue);
+            Controls.Add(lblBalance);
+            Controls.Add(lblBalanceValue);
+            Controls.Add(txtAmount);
+            Controls.Add(btnDeposit);
+            Controls.Add(btnWithdraw);
+            Controls.Add(btnViewTransactions);
+            Name = "BankAccountForm";
+            Text = "Bank Account";
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        private void StylePrimaryButton(Button b)
+        {
+            b.BackColor = Color.FromArgb(0, 255, 117);
+            b.ForeColor = Color.Black;
+            b.FlatStyle = FlatStyle.Flat;
+            b.FlatAppearance.BorderSize = 0;
+            b.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+        }
+
+        private void StyleSecondaryButton(Button b)
+        {
+            b.BackColor = Color.FromArgb(17, 17, 17);
+            b.ForeColor = Color.FromArgb(0, 255, 117);
+            b.FlatStyle = FlatStyle.Flat;
+            b.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 117);
+            b.FlatAppearance.BorderSize = 2;
+            b.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
         }
     }
 }

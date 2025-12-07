@@ -3,20 +3,18 @@
     partial class AddUserForm
     {
         private System.ComponentModel.IContainer components = null;
-
-        private System.Windows.Forms.Label lblFullname;
-        private System.Windows.Forms.Label lblUsername;
-        private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.TextBox txtFullname;
-        private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnCancel;
+        private Label lblFullname;
+        private Label lblUsername;
+        private Label lblPassword;
+        private TextBox txtFullname;
+        private TextBox txtUsername;
+        private TextBox txtPassword;
+        private Button btnSave;
+        private Button btnCancel;
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
-                components.Dispose();
+            if (disposing && (components != null)) components.Dispose();
             base.Dispose(disposing);
         }
 
@@ -31,48 +29,61 @@
             btnSave = new Button();
             btnCancel = new Button();
             SuspendLayout();
+
+            // Form
+            this.ClientSize = new Size(420, 200);
+            this.BackColor = Color.FromArgb(0, 0, 0);
+            this.Font = new Font("Segoe UI", 10F);
+
             // lblFullname
             lblFullname.AutoSize = true;
             lblFullname.Location = new Point(25, 20);
-            lblFullname.Name = "lblFullname";
+            lblFullname.ForeColor = Color.White;
             lblFullname.Text = "Full Name:";
+
             // txtFullname
             txtFullname.Location = new Point(120, 18);
-            txtFullname.Name = "txtFullname";
-            txtFullname.Size = new Size(240, 23);
+            txtFullname.Size = new Size(270, 23);
+            StyleTextBox(txtFullname);
+
             // lblUsername
             lblUsername.AutoSize = true;
             lblUsername.Location = new Point(25, 55);
-            lblUsername.Name = "lblUsername";
+            lblUsername.ForeColor = Color.White;
             lblUsername.Text = "Username:";
+
             // txtUsername
             txtUsername.Location = new Point(120, 52);
-            txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(240, 23);
+            txtUsername.Size = new Size(270, 23);
+            StyleTextBox(txtUsername);
+
             // lblPassword
             lblPassword.AutoSize = true;
             lblPassword.Location = new Point(25, 90);
-            lblPassword.Name = "lblPassword";
+            lblPassword.ForeColor = Color.White;
             lblPassword.Text = "Password:";
+
             // txtPassword
             txtPassword.Location = new Point(120, 87);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(240, 23);
+            txtPassword.Size = new Size(270, 23);
             txtPassword.PasswordChar = '*';
+            StyleTextBox(txtPassword);
+
             // btnSave
             btnSave.Location = new Point(120, 130);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new Size(90, 30);
+            btnSave.Size = new Size(100, 36);
             btnSave.Text = "Save";
+            StylePrimaryButton(btnSave);
             btnSave.Click += btnSave_Click;
+
             // btnCancel
-            btnCancel.Location = new Point(270, 130);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(90, 30);
+            btnCancel.Location = new Point(250, 130);
+            btnCancel.Size = new Size(100, 36);
             btnCancel.Text = "Cancel";
+            StyleSecondaryButton(btnCancel);
             btnCancel.Click += btnCancel_Click;
-            // AddUserForm
-            ClientSize = new Size(400, 190);
+
+            // Add controls
             Controls.Add(lblFullname);
             Controls.Add(txtFullname);
             Controls.Add(lblUsername);
@@ -85,6 +96,32 @@
             Text = "Add User";
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void StyleTextBox(TextBox t)
+        {
+            t.BackColor = Color.FromArgb(17, 17, 17);
+            t.ForeColor = Color.White;
+            t.BorderStyle = BorderStyle.FixedSingle;
+        }
+
+        private void StylePrimaryButton(Button b)
+        {
+            b.BackColor = Color.FromArgb(0, 255, 117);
+            b.ForeColor = Color.Black;
+            b.FlatStyle = FlatStyle.Flat;
+            b.FlatAppearance.BorderSize = 0;
+            b.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+        }
+
+        private void StyleSecondaryButton(Button b)
+        {
+            b.BackColor = Color.FromArgb(17, 17, 17);
+            b.ForeColor = Color.FromArgb(0, 255, 117);
+            b.FlatStyle = FlatStyle.Flat;
+            b.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 117);
+            b.FlatAppearance.BorderSize = 2;
+            b.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
         }
     }
 }
