@@ -45,7 +45,7 @@
             // 
             btnViewAccount.Location = new Point(25, 400);
             btnViewAccount.Name = "btnViewAccount";
-            btnViewAccount.Size = new Size(150, 35);
+            btnViewAccount.Size = new Size(150, 48);
             btnViewAccount.TabIndex = 1;
             btnViewAccount.Text = "View Bank Account";
             btnViewAccount.Click += btnViewAccount_Click;
@@ -54,7 +54,7 @@
             // 
             btnRefresh.Location = new Point(750, 400);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(110, 35);
+            btnRefresh.Size = new Size(110, 48);
             btnRefresh.TabIndex = 0;
             btnRefresh.Text = "Refresh";
             btnRefresh.Click += btnRefresh_Click;
@@ -63,7 +63,7 @@
             // 
             btnViewTransactions.Location = new Point(190, 400);
             btnViewTransactions.Name = "btnViewTransactions";
-            btnViewTransactions.Size = new Size(150, 35);
+            btnViewTransactions.Size = new Size(150, 48);
             btnViewTransactions.TabIndex = 4;
             btnViewTransactions.Text = "View Transactions";
             btnViewTransactions.Click += btnViewTransactions_Click;
@@ -72,7 +72,7 @@
             // 
             btnEdit.Location = new Point(360, 400);
             btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(90, 35);
+            btnEdit.Size = new Size(90, 48);
             btnEdit.TabIndex = 5;
             btnEdit.Text = "Edit";
             btnEdit.Click += btnEdit_Click;
@@ -86,7 +86,7 @@
             btnDelete.ForeColor = Color.FromArgb(0, 255, 117);
             btnDelete.Location = new Point(460, 400);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(90, 35);
+            btnDelete.Size = new Size(90, 48);
             btnDelete.TabIndex = 6;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;

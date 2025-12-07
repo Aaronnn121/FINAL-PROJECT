@@ -86,7 +86,7 @@
             // 
             btnSave.Location = new Point(120, 130);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(100, 36);
+            btnSave.Size = new Size(100, 46);
             btnSave.TabIndex = 6;
             btnSave.Text = "Save";
             btnSave.Click += btnSave_Click;
@@ -95,7 +95,7 @@
             // 
             btnCancel.Location = new Point(250, 130);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(100, 36);
+            btnCancel.Size = new Size(100, 46);
             btnCancel.TabIndex = 7;
             btnCancel.Text = "Cancel";
             btnCancel.Click += btnCancel_Click;

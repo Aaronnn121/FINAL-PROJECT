@@ -87,7 +87,7 @@
             // 
             btnDeposit.Location = new Point(260, 88);
             btnDeposit.Name = "btnDeposit";
-            btnDeposit.Size = new Size(90, 30);
+            btnDeposit.Size = new Size(90, 39);
             btnDeposit.TabIndex = 5;
             btnDeposit.Text = "Deposit";
             btnDeposit.Click += btnDeposit_Click;
@@ -101,7 +101,7 @@
             btnWithdraw.ForeColor = Color.White;
             btnWithdraw.Location = new Point(360, 88);
             btnWithdraw.Name = "btnWithdraw";
-            btnWithdraw.Size = new Size(90, 30);
+            btnWithdraw.Size = new Size(90, 39);
             btnWithdraw.TabIndex = 6;
             btnWithdraw.Text = "Withdraw";
             btnWithdraw.UseVisualStyleBackColor = false;

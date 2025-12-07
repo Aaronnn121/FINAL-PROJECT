@@ -36,7 +36,7 @@
             // 
             btnTransfer.Location = new Point(259, 197);
             btnTransfer.Name = "btnTransfer";
-            btnTransfer.Size = new Size(100, 30);
+            btnTransfer.Size = new Size(100, 46);
             btnTransfer.TabIndex = 2;
             btnTransfer.Text = "Transfer";
             btnTransfer.UseVisualStyleBackColor = true;

@@ -38,52 +38,52 @@ namespace FINAL_PROJECT
             // 
             // btnAddUser
             // 
-            btnAddUser.Location = new Point(24, 70);
+            btnAddUser.Location = new Point(24, 59);
             btnAddUser.Name = "btnAddUser";
-            btnAddUser.Size = new Size(220, 42);
+            btnAddUser.Size = new Size(220, 53);
             btnAddUser.TabIndex = 1;
             btnAddUser.Text = "Add New User";
             btnAddUser.Click += btnAddUser_Click;
             // 
             // btnListUsers
             // 
-            btnListUsers.Location = new Point(24, 130);
+            btnListUsers.Location = new Point(24, 119);
             btnListUsers.Name = "btnListUsers";
-            btnListUsers.Size = new Size(220, 42);
+            btnListUsers.Size = new Size(220, 53);
             btnListUsers.TabIndex = 2;
             btnListUsers.Text = "List Users";
             btnListUsers.Click += btnListUsers_Click;
             // 
             // btnTransfer
             // 
-            btnTransfer.Location = new Point(24, 190);
+            btnTransfer.Location = new Point(24, 179);
             btnTransfer.Name = "btnTransfer";
-            btnTransfer.Size = new Size(220, 42);
+            btnTransfer.Size = new Size(220, 53);
             btnTransfer.TabIndex = 3;
             btnTransfer.Text = "Transfer Money";
             btnTransfer.Click += btnTransfer_Click;
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(24, 250);
+            btnLogout.Location = new Point(24, 239);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(100, 36);
+            btnLogout.Size = new Size(100, 47);
             btnLogout.TabIndex = 4;
             btnLogout.Text = "Logout";
             btnLogout.Click += btnLogout_Click;
             // 
             // btnExit
             // 
-            btnExit.Location = new Point(144, 250);
+            btnExit.Location = new Point(144, 239);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(100, 36);
+            btnExit.Size = new Size(100, 47);
             btnExit.TabIndex = 5;
             btnExit.Text = "Exit";
             btnExit.Click += btnExit_Click;
             // 
             // MainMenuForm
             // 
-            ClientSize = new Size(600, 320);
+            ClientSize = new Size(277, 320);
             Controls.Add(lblWelcome);
             Controls.Add(btnAddUser);
             Controls.Add(btnListUsers);
