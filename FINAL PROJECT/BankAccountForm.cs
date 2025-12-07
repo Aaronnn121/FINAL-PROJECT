@@ -77,6 +77,32 @@ namespace FINAL_PROJECT
 
         private void btnWithdraw_Click(object sender, EventArgs e)
         {
+         
+        }
+
+
+
+        private void btnViewTransactions_Click(object sender, EventArgs e)
+        {
+            if (account == null)
+            {
+                MessageBox.Show("No account found.", "Transactions", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            using (var f = new TransactionHistoryForm(account.Id))
+            {
+                f.ShowDialog();
+            }
+        }
+
+        private void BankAccountForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnWithdraw_Click_1(object sender, EventArgs e)
+        {
             if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0)
             {
                 MessageBox.Show("Please enter a valid positive amount.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -108,27 +134,6 @@ namespace FINAL_PROJECT
             ReceiptPrinter.PrintWithdrawReceipt(userRepo.Get(_userId), account, amount);
 
             MessageBox.Show("Withdrawal successful!", "Withdraw", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-
-
-        private void btnViewTransactions_Click(object sender, EventArgs e)
-        {
-            if (account == null)
-            {
-                MessageBox.Show("No account found.", "Transactions", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            using (var f = new TransactionHistoryForm(account.Id))
-            {
-                f.ShowDialog();
-            }
-        }
-
-        private void BankAccountForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

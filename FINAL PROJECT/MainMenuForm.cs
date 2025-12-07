@@ -51,7 +51,7 @@ namespace FINAL_PROJECT
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            using (var f = new TransferForm(_currentUser.Id))
+            using (var f = new LoginForm())
             {
                 f.ShowDialog();
             }

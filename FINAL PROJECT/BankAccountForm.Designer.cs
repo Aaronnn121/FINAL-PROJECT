@@ -105,6 +105,7 @@
             btnWithdraw.TabIndex = 6;
             btnWithdraw.Text = "Withdraw";
             btnWithdraw.UseVisualStyleBackColor = false;
+            btnWithdraw.Click += btnWithdraw_Click_1;
             // 
             // btnViewTransactions
             // 
