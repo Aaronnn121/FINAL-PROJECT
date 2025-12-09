@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FINAL_PROJECT
@@ -13,6 +6,7 @@ namespace FINAL_PROJECT
     public partial class MainMenuForm : Form
     {
         private User _currentUser;
+        public bool IsLoggingOut { get; private set; }
 
         public MainMenuForm(User currentUser)
         {
@@ -26,19 +20,17 @@ namespace FINAL_PROJECT
         private void btnAddUser_Click(object sender, EventArgs e)
         {
             using (var f = new AddUserForm()) f.ShowDialog();
-
         }
 
         private void btnListUsers_Click(object sender, EventArgs e)
         {
             using (var f = new ListUsersForm()) f.ShowDialog();
-
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
-
+            var res = MessageBox.Show("Are you sure you want to exit?", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res == DialogResult.Yes) Application.Exit();
         }
 
         private void btnTransfer_Click(object sender, EventArgs e)
@@ -51,9 +43,11 @@ namespace FINAL_PROJECT
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            using (var f = new LoginForm())
+            var res = MessageBox.Show("Log out?", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res == DialogResult.Yes)
             {
-                f.ShowDialog();
+                IsLoggingOut = true;
+                this.Close();
             }
         }
 

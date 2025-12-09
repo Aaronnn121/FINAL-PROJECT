@@ -89,6 +89,9 @@ namespace FINAL_PROJECT
                 return;
             }
 
+            // get sender user for a readable remark
+            var senderUser = userRepo.Get(sourceAcc.UserId);
+
             // update accounts
             sourceAcc.Balance -= amount;
             receiverAcc.Balance += amount;
@@ -96,7 +99,7 @@ namespace FINAL_PROJECT
             accRepo.Update(sourceAcc);
             accRepo.Update(receiverAcc);
 
-            // log transactions
+            // log transactions — use usernames in Remarks instead of raw account ids
             txRepo.Add(new Transaction
             {
                 UserId = receiverUser.Id,
@@ -104,7 +107,7 @@ namespace FINAL_PROJECT
                 Amount = amount,
                 Type = "Transfer In",
                 CreatedAt = DateTime.UtcNow,
-                Remarks = $"Received from account {sourceAcc.Id}"
+                Remarks = $"Received from {senderUser?.Username ?? "(Unknown)"} (Acc {sourceAcc.Id})"
             });
 
             txRepo.Add(new Transaction
@@ -114,11 +117,10 @@ namespace FINAL_PROJECT
                 Amount = -amount,
                 Type = "Transfer Out",
                 CreatedAt = DateTime.UtcNow,
-                Remarks = $"Sent to account {receiverAcc.Id}"
+                Remarks = $"Sent to {receiverUser.Username} (Acc {receiverAcc.Id})"
             });
 
             // print receipt
-            var senderUser = userRepo.Get(sourceAcc.UserId);
             ReceiptPrinter.PrintTransferReceipt(senderUser, receiverUser, sourceAcc, receiverAcc, amount);
 
             MessageBox.Show("Transfer successful!");
