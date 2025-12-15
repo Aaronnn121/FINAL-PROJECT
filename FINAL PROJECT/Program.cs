@@ -3,6 +3,8 @@ using System.Windows.Forms;
 
 namespace FINAL_PROJECT
 {
+    //FINAL PROJECT: ESTANOCO, PASCUAL, BAUTISTA
+
     internal static class Program
     {
         [STAThread]
