@@ -29,3 +29,11 @@ Authentication flow
 Clean software architecture
 
 It is not intended for real banking use.
+
+***Group***
+
+Mark Aaron P. Estanoco
+
+Jhunerry Marc Pascual
+
+Ashleymhar Baustista
