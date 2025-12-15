@@ -4,6 +4,7 @@ using System.Text;
 
 public static class AuthService
 {
+    //FINAL PROJECT: ESTANOCO, PASCUAL, BAUTISTA
     // Simple SHA256 hash (demo only)
     public static string HashPassword(string password)
     {
